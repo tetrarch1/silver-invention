@@ -2,329 +2,276 @@ def ptb(szen, sztva):
   return tblx(pmtrx(szen), pmtrx(sztva))
 def tblx(matrixa, matrixb):
   import math
-  for typhlo in range(2):
-    #print("RAAAAAAAAAA")
-    togekiss = []
-    sableye = []
-    if typhlo == 0:
-      for walle in matrixa:
-        sableye.append(walle[:])
+  for pqcounter in range(2):
+
+    listone = []
+    listsab = []
+    if pqcounter == 0:
+      for listw in matrixa:
+        listsab.append(listw[:])
     else:
-      for walle in matrixb:
-        sableye.append(walle[:])
-    for lucario in range(len(sableye)):
-      for riolu in range(len(sableye[lucario])):
-        while sableye[lucario][riolu] > 0:
-          togekiss.append([1+riolu,1+lucario])
-          sableye[lucario][riolu]=sableye[lucario][riolu] - 1
-    bumpy = []
-    for walle in togekiss:
-      bumpy.append(walle[:])
-    togekiss = []
-    emmeryn = []
-    for lucario in bumpy:
-      emmeryn.append((lucario)[1])
-      togekiss.append((lucario)[0])
-    lissa = [[1,1]]
-    #print(emmeryn)
-    #print(togekiss)  
-    #print("OLOLOLOLO")
-    cdr = [[1,0]]
-    seo = [[1,0]]
-    for unown in range(1, len(togekiss)):
-      binnot = 3
-      xhuman = 1
-      qwerty = unown
-      while binnot != 4:
-        binnot = 4
-        ilmarin = -1
-        charles = True
-        while ilmarin < len(seo)-1 and charles:
-          ilmarin += 1
-          
-          jacob = None
-          for riolu in range(0,len(seo)):
-            if cdr[riolu][0] == xhuman:
-              if jacob == None and togekiss[seo[riolu][1]]>togekiss[qwerty]:
-                jacob = seo[riolu]
-              elif togekiss[seo[riolu][1]]>togekiss[qwerty] and seo[riolu][0] < jacob[0]:
-                jacob = seo[riolu]
-          if jacob != None:
-            wobbuffet = jacob[0]
-            jacob = jacob[1]
-            if togekiss[jacob] > togekiss[qwerty]:
-              binnot = 3
-                
-              if unown == qwerty:
-                cdr.append([xhuman, qwerty])
-                seo.append([wobbuffet, qwerty])
-                #print(cdr)
-                #print(seo)
-                #print("ola")
+      for listw in matrixb:
+        listsab.append(listw[:])
+    for twocounter in range(len(listsab)):
+      for counter in range(len(listsab[twocounter])):
+        while listsab[twocounter][counter] > 0:
+          listone.append([1+counter,1+twocounter])
+          listsab[twocounter][counter]=listsab[twocounter][counter] - 1
+    interrim = []
+    for listw in listone:
+      interrim.append(listw[:])
+    listone = []
+    liste = []
+    for twocounter in interrim:
+      liste.append((twocounter)[1])
+      listone.append((twocounter)[0])
+    listl = [[1,1]]  
+    clistone = [[1,0]]
+    slistone = [[1,0]]
+    for alphabet in range(1, len(listone)):
+      b = 3
+      x = 1
+      qwerty = alphabet
+      while b != 4:
+        b = 4
+        i = -1
+        truth = True
+        while i < len(slistone)-1 and truth:
+          i += 1         
+          j = None
+          for counter in range(0,len(slistone)):
+            if clistone[counter][0] == x:
+              if j == None and listone[slistone[counter][1]]>listone[qwerty]:
+                j = slistone[counter]
+              elif listone[slistone[counter][1]]>listone[qwerty] and slistone[counter][0] < j[0]:
+                j = slistone[counter]
+          if j != None:
+            w = j[0]
+            j = j[1]
+            if listone[j] > listone[qwerty]:
+              b = 3               
+              if alphabet == qwerty:
+                clistone.append([x, qwerty])
+                slistone.append([w, qwerty])
               else:
-                cdr[qwerty] = [xhuman, qwerty]
-                seo[qwerty] = [wobbuffet, qwerty]
-                #print(cdr)
-                #print(seo)
-                #print("olu")
-              qwerty = jacob
-              xhuman = xhuman + 1
-              charles = False
-        #print(cdr)
-        #print(seo)
-        #print("olo")
-      gorefield = 0
-      for farquaad in range(0,len(seo)):
+                clistone[qwerty] = [x, qwerty]
+                slistone[qwerty] = [w, qwerty]
+              qwerty = j
+              x = x + 1
+              truth = False
+      maxim = 0
+      for f in range(0,len(slistone)):
        
-        if cdr[farquaad][0] == xhuman:
-          voltorb = seo[farquaad][0]
-          gorefield = max(gorefield, voltorb)
-      lissa.append([xhuman, gorefield+1])
-      if unown == qwerty:
-        cdr.append([xhuman, qwerty])
-        seo.append([gorefield+1, qwerty])
-        #print(cdr)
-        #print(seo)
-        #print("oli")
+        if clistone[f][0] == x:
+          v = slistone[f][0]
+          maxim = max(maxim, v)
+      listl.append([x, maxim+1])
+      if alphabet == qwerty:
+        clistone.append([x, qwerty])
+        slistone.append([maxim+1, qwerty])
       else:
-        cdr[qwerty] = [xhuman, qwerty]
-        seo[qwerty] = [gorefield+1, qwerty]
-        #print(cdr)
-        #print(seo)
-        #print("ole")
-      #print(cdr)
-      #print(seo)
-      #print("olo")
-    maedhros = []
-    for stupidpython in range(0,len(cdr)):
-      maedhros.append([cdr[stupidpython][0], seo[stupidpython][0]])
-    morgoth = []
-    for ulmo in range(1,len(cdr)+1):
-      uvula = len(cdr) - ulmo
-      rasputin = (cdr[uvula])[1]
-      morgoth = [togekiss[rasputin]]+morgoth
-    if typhlo == 0:
-      varda = []
-      manwe = []
-      gwindor = []
-      eonwe = []
-      for walle in emmeryn:
-        varda.append(walle)
-      for walle in lissa:
-        manwe.append(walle[:])
-      for walle in maedhros:
-        gwindor.append(walle[:])
-      for walle in morgoth:
-        eonwe.append(walle)
+        clistone[qwerty] = [x, qwerty]
+        slistone[qwerty] = [maxim+1, qwerty]
+    listma = []
+    for anothercounter in range(0,len(clistone)):
+      listma.append([clistone[anothercounter][0], slistone[anothercounter][0]])
+    listm = []
+    for u in range(1,len(clistone)+1):
+      utwo = len(clistone) - u
+      ra = (clistone[utwo])[1]
+      listm = [listone[ra]]+listm
+    if pqcounter == 0:
+      listv = []
+      listmwe = []
+      listg = []
+      listthree = []
+      for listw in liste:
+        listv.append(listw)
+      for listw in listl:
+        listmwe.append(listw[:])
+      for listw in listma:
+        listg.append(listw[:])
+      for listw in listm:
+        listthree.append(listw)
     else:
-      feanor = []
-      for walle in morgoth:
-        feanor.append(walle)
-      morgoth = []
-      for walle in eonwe:
-        morgoth.append(walle)
-    
-  
-  #print("utulie'n aure") 
-  #print(gwindor)
-  #print(morgoth)
-  #print(maedhros)
-  #print(feanor)
-  #print(lissa)
-  #print(emmeryn)
-  #print(manwe)
-  #print(varda)
-  #return
-  #print("aute i lome")
-  #peas porridge hot
-  
-
-  for typhlo in range(2):
-    #print("olo")
-    if typhlo == 1:
-      ilmarin = fmax(maedhros,1)
-      wobbuffet = fmax(gwindor, 0)
+      listf = []
+      for listw in listm:
+        listf.append(listw)
+      listm = []
+      for listw in listthree:
+        listm.append(listw)
+  for pqcounter in range(2):
+    if pqcounter == 1:
+      i = fmax(listma,1)
+      w = fmax(listg, 0)
       row = []
-      for riolu in maedhros:
-        row.append([riolu[0]+wobbuffet, riolu[1]])
+      for counter in listma:
+        row.append([counter[0]+w, counter[1]])
       rowtva = []
-      for riolu in gwindor:
-        rowtva.append([riolu[0], riolu[1]+ilmarin])
-      eonwe= rowtva+row
-      togekiss = morgoth + feanor
+      for counter in listg:
+        rowtva.append([counter[0], counter[1]+i])
+      listthree= rowtva+row
+      listone = listm + listf
     else:
-      ilmarin = fmax(lissa, 1)
-      wobbuffet = fmax(manwe, 0)
+      i = fmax(listl, 1)
+      w = fmax(listmwe, 0)
       row = []
-      for riolu in manwe:
-        row.append([riolu[0],riolu[1] + ilmarin])
+      for counter in listmwe:
+        row.append([counter[0],counter[1] + i])
       rowtva = []
-      for riolu in lissa:
-        rowtva.append([riolu[0]+wobbuffet,riolu[1]])
-      eonwe = rowtva+row
-      togekiss = emmeryn + varda
-    binnot = 4
-    #print(eonwe)  
-    #print(togekiss)
-
-
-
-    while binnot != 3:
-      binnot = 3
-      dorkrai = fmax(eonwe, 1)
-      emboar = fmax(eonwe, 0)
-      froslass = max(togekiss)
-      hroomhroom = froslass
-      chrom = [-1,-1,-1]
-      ulmo = emboar+1
-      while ulmo >=2:
-        ulmo = ulmo - 1
-        voltorb = dorkrai + 1
-        while voltorb >= 2:
-          voltorb = voltorb - 1
-          lalumba = [ulmo, voltorb]
-          if lalumba not in eonwe:
-            patumba = [ulmo, voltorb+1]
-            if patumba not in eonwe:
-              jormungundr = hroomhroom + 1
-              chrom[0] = -1
+      for counter in listl:
+        rowtva.append([counter[0]+w,counter[1]])
+      listthree = rowtva+row
+      listone = liste + listv
+    b = 4
+    while b != 3:
+      b = 3
+      d = fmax(listthree, 1)
+      e = fmax(listthree, 0)
+      froslass = max(listone)
+      h = froslass
+      slistone = [-1,-1,-1]
+      u = e+1
+      while u >=2:
+        u = u - 1
+        v = d + 1
+        while v >= 2:
+          v = v - 1
+          lalumba = [u, v]
+          if lalumba not in listthree:
+            p = [u, v+1]
+            if p not in listthree:
+              j = h + 1
+              slistone[0] = -1
             else:
-              teniquetil = eonwe.index(patumba)
-              chrom[0] = teniquetil
-              jormungundr = togekiss[teniquetil]
-            patumba = [ulmo+1, voltorb]
-            if patumba not in eonwe:
-              karu = hroomhroom + 1
-              chrom[1] = -1
+              timer = listthree.index(p)
+              slistone[0] = timer
+              j = listone[timer]
+            p = [u+1, v]
+            if p not in listthree:
+              karu = h + 1
+              slistone[1] = -1
             else:
-              teniquetil = eonwe.index(patumba)
-              chrom[1] = teniquetil
-              karu = togekiss[teniquetil]
-            if (jormungundr != hroomhroom+1) or (karu!= hroomhroom+1):
-              binnot = binnot + 1
-              if jormungundr >= karu:
-                eonwe[chrom[1]][0] = eonwe[chrom[1]][0] - 1
-                ulmo += 1
-                voltorb += 1
+              timer = listthree.index(p)
+              slistone[1] = timer
+              karu = listone[timer]
+            if (j != h+1) or (karu!= h+1):
+              b = b + 1
+              if j >= karu:
+                listthree[slistone[1]][0] = listthree[slistone[1]][0] - 1
+                u += 1
+                v += 1
               else:
-                eonwe[chrom[0]][1] = eonwe[chrom[0]][1] - 1
-                ulmo += 1
-              
-    if typhlo == 0:
-      rowtra = togekiss[:]
+                listthree[slistone[0]][1] = listthree[slistone[0]][1] - 1
+                u += 1              
+    if pqcounter == 0:
+      rowtra = listone[:]
       rowfyra = []
-      for riolu in eonwe:
-        rowfyra.append(riolu[:])
-        #peas porridge cold
-  #peas porridge in a pot
-  #print("olo")
-  #print(rowfyra)
-  #print(rowtra)
-
-  #print(togekiss)
-  #print(eonwe)
-  chrom = []
-  for lucario in eonwe:
-    chrom.append(lucario[:])
-  sumia = togekiss[:]
+      for counter in listthree:
+        rowfyra.append(counter[:])
+  slistone = []
+  for twocounter in listthree:
+    slistone.append(twocounter[:])
+  slisttwo = listone[:]
   lbd = [0]
   dnhc = [0]
-  dorkrai = len(togekiss)
-  emboar = dorkrai
-  while emboar > 0:
-    for riolu in range(emboar, len(sumia)):
-      del(sumia[riolu])
-      del(chrom[riolu])
-      del(rowtra[riolu])
-      del(rowfyra[riolu])
-    mitsuhide = 0
+  d = len(listone)
+  e = d
+  while e > 0:
+    for counter in range(e, len(slisttwo)):
+      del(slisttwo[counter])
+      del(slistone[counter])
+      del(rowtra[counter])
+      del(rowfyra[counter])
+    m = 0
     pippin = [0,0]
-    for teniquetil in range(0,emboar):
-      if (rowtra[teniquetil] == mitsuhide) and (rowfyra[teniquetil][1]>pippin[1]):
-        pippin = rowfyra[teniquetil]
-        orome = teniquetil      
-      if rowtra[teniquetil] > mitsuhide:
-        orome = teniquetil
-        pippin = rowfyra[teniquetil]
-        mitsuhide = rowtra[teniquetil]
-    dnhc = [mitsuhide]+dnhc
-    rowtra[orome] = rowtra[emboar-1]
-    rowfyra[orome] = rowfyra[emboar-1]
-    teniquetil = chrom.index(pippin)
-    ulmo = teniquetil
-    qwerty = sumia[ulmo]
-    if chrom[ulmo][0] != 1:
-      while chrom[ulmo][0] != 1:
-        rasputin = chrom[ulmo][0]
-        mitsuhide = 0
-        voltorb = 0
-        for teniquetil in range(0,emboar):
-          if (sumia[teniquetil] < qwerty) and (sumia[teniquetil] == mitsuhide) and (chrom[teniquetil][1] > voltorb) and (rasputin - 1 == chrom[teniquetil][0]) or (sumia[teniquetil]<qwerty) and (sumia[teniquetil] > mitsuhide) and (rasputin - 1 == chrom[teniquetil][0]):
-            wobbuffet = teniquetil
-            mitsuhide = sumia[teniquetil]
-            voltorb = chrom[teniquetil][1]
-        chrom[ulmo] = [rasputin - 1,voltorb]
-        qwerty = mitsuhide
-        ulmo = wobbuffet
+    for timer in range(0,e):
+      if (rowtra[timer] == m) and (rowfyra[timer][1]>pippin[1]):
+        pippin = rowfyra[timer]
+        orome = timer      
+      if rowtra[timer] > m:
+        orome = timer
+        pippin = rowfyra[timer]
+        m = rowtra[timer]
+    dnhc = [m]+dnhc
+    rowtra[orome] = rowtra[e-1]
+    rowfyra[orome] = rowfyra[e-1]
+    timer = slistone.index(pippin)
+    u = timer
+    qwerty = slisttwo[u]
+    if slistone[u][0] != 1:
+      while slistone[u][0] != 1:
+        ra = slistone[u][0]
+        m = 0
+        v = 0
+        for timer in range(0,e):
+          if (slisttwo[timer] < qwerty) and (slisttwo[timer] == m) and (slistone[timer][1] > v) and (ra - 1 == slistone[timer][0]) or (slisttwo[timer]<qwerty) and (slisttwo[timer] > m) and (ra - 1 == slistone[timer][0]):
+            w = timer
+            m = slisttwo[timer]
+            v = slistone[timer][1]
+        slistone[u] = [ra - 1,v]
+        qwerty = m
+        u = w
     lbd = [qwerty]+lbd
-    chrom[ulmo] = chrom[emboar-1]
-    sumia[ulmo] = sumia[emboar-1]
-    emboar = emboar - 1
-  #nine days old
-  del(lbd[dorkrai])
-  del(dnhc[dorkrai])
-  dorkrai = max(dnhc)
-  emboar = max(lbd)
-  riolu = [0]*emboar
-  jormungundr = []
-  for teniquetil in range(0, dorkrai):
-    jormungundr.append(riolu[:])
+    slistone[u] = slistone[e-1]
+    slisttwo[u] = slisttwo[e-1]
+    e = e - 1
+  del(lbd[d])
+  del(dnhc[d])
+  d = max(dnhc)
+  e = max(lbd)
+  counter = [0]*e
+  j = []
+  for timer in range(0, d):
+    j.append(counter[:])
   
-  for teniquetil in range(0,len(dnhc)):
-    karu = dnhc[teniquetil]
-    lalumba = lbd[teniquetil]
-    jormungundr[karu-1][lalumba-1] = jormungundr[karu-1][lalumba-1] + 1
-  ampharos = 0
-  for typhlo in jormungundr:
-    ampharos += 1
-    print(typhlo, ampharos)
+  for timer in range(0,len(dnhc)):
+    karu = dnhc[timer]
+    lalumba = lbd[timer]
+    j[karu-1][lalumba-1] = j[karu-1][lalumba-1] + 1
+  otherlist = 0
+  for pqcounter in j:
+    otherlist += 1
+    print(pqcounter, otherlist)
   print("incidence matrix is")
-  ampharos = 0
-  for typhlo in jormungundr:
-    togekiss = []
-    ampharos += 1
-    for riolu in typhlo:
-      togekiss.append(riolu % 2)
-    print(togekiss, ampharos)
+  otherlist = 0
+  for pqcounter in j:
+    listone = []
+    otherlist += 1
+    for counter in pqcounter:
+      listone.append(counter % 2)
+    print(listone, otherlist)
   return
-def fmax(utlanning, index):
-  gorefield = 0
-  for riolu in utlanning:
-    gorefield = max(gorefield, riolu[index])
-  return gorefield
+def fmax(somelist, index):
+  maxim = 0
+  for counter in somelist:
+    maxim = max(maxim, counter[index])
+  return maxim
 plst = [[[0]], [[0,1],[1,0]]]
-def pmtrx(lucario):
-  lucario = lucario - 1
-  if lucario < len(plst):
-    return plst[lucario]
-  for riolu in range(len(plst),lucario+1):
-    togekiss = []
-    for typhlo in plst[riolu-1]:
-      togekiss.append(typhlo[:])
-    togekiss[0].append(1)
-    ampharos = [1]
-    for typhlo in range(1,riolu):
-      sharkie = (plst[riolu-1][typhlo-1][riolu-1]+plst[riolu-1][typhlo][riolu-1]) % 2
-      togekiss[typhlo].append(sharkie)
-      ampharos.append(sharkie)
-    ampharos.append(0)
-    togekiss.append(ampharos)
-    plst.append(togekiss)
-  return plst[lucario]
-def ptrx(lucario):
-  raquayza = pmtrx(lucario)
-  voltorb = 1
-  for typhlo in raquayza:
-    print(voltorb, typhlo)
-    voltorb += 1
+def pmtrx(twocounter):
+  twocounter = twocounter - 1
+  if twocounter < len(plst):
+    return plst[twocounter]
+  for counter in range(len(plst),twocounter+1):
+    listone = []
+    for pqcounter in plst[counter-1]:
+      listone.append(pqcounter[:])
+    listone[0].append(1)
+    otherlist = [1]
+    for pqcounter in range(1,counter):
+      s = (plst[counter-1][pqcounter-1][counter-1]+plst[counter-1][pqcounter][counter-1]) % 2
+      listone[pqcounter].append(s)
+      otherlist.append(s)
+    otherlist.append(0)
+    listone.append(otherlist)
+    plst.append(listone)
+  return plst[twocounter]
+def ptrx(twocounter):
+  r = pmtrx(twocounter)
+  v = 1
+  for pqcounter in r:
+    print(v, pqcounter)
+    v += 1
     
+
+
